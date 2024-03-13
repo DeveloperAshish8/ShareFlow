@@ -62,7 +62,7 @@ const SharedPage = ({ file }) => {
             <button
               className="p-4 m-auto flex justify-center rounded-lg bg-primary text-white w-[80%] items-center disabled:bg-gray-400"
               disabled={file.password !== password}
-              onClick={() => window.open(file.fileUrl)}
+              onClick={() => window?.open(file.fileUrl)}
             >
               {" "}
               Download
