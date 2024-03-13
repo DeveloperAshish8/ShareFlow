@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "heading": "Login to ShareFlow",
+    "description": "Click on Get Started and login to ShareFlow or Create a new Account (Single step process)"
+  },
+  {
+    "id": 2,
+    "heading": "Select the file",
+    "description": "Select the file of any format ( .jpg, .png, .pdf and more...) with size under 10 MB"
+  },
+  {
+    "id": 3,
+    "heading": "Hurrah! Done 🚀",
+    "description": "Share Directly or copy the shortend link Generated and share this to the receiver"
+  }
+]
