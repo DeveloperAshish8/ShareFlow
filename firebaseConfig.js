@@ -6,15 +6,18 @@ import { getAnalytics, isSupported } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCv_U0ojnLlgmd2V59HShRQPa2YHqCstGY",
-  authDomain: "shareflow-web.firebaseapp.com",
-  projectId: "shareflow-web",
-  storageBucket: "shareflow-web.appspot.com",
-  messagingSenderId: "927792002059",
-  appId: "1:927792002059:web:ca05251ab117a9ad08c30e",
-  measurementId: "G-368JDXG8DD",
+  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
+
+// Now you can use firebaseConfig object as before, but with values from environment variables.
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
