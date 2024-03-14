@@ -31,11 +31,47 @@ body {
   display: none !important;
 }
 
+.menu-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  list-style: none;
+  gap: 3rem;
+  font-size: small;
+  cursor: pointer;
+}
+
+.mobile-menu-link {
+  display: hidden;
+}
+
 @media (max-width: 600px) and (min-width: 300px) {
   .sidenav {
     margin-top: 3rem;
     height: 50%;
     padding-top: 10px;
+  }
+
+  .mobile-menu-link {
+    position: fixed;
+    list-style: none;
+    gap: 2rem;
+    font-weight: 500;
+    flex-direction: column;
+    right: 0.5rem;
+    top: 3.5rem;
+    min-width: 50%;
+    padding: 2rem;
+    display: flex;
+    border-radius: 2rem;
+    align-items: flex-start;
+    transition: all 300ms ease;
+    background: white;
+  }
+  .menu-link {
+    display: none;
   }
 
   /* .sidenav-logo{
