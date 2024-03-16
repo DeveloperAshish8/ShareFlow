@@ -10,7 +10,7 @@ const Alert = () => {
             <div className="p-2 flex ">
               <div className="items-center">
                 <p className=" text-red-600 font-semibold text-sm md:text-lg">
-                  File Size Exceeds 2MB..
+                  File Size Exceeds 10MB..
                 </p>
                 <div className="ml-[20%]">
                   <Image src="/dog.gif" alt="Dog" width={100} height={100} />

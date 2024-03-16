@@ -14,8 +14,8 @@ function Hero() {
         </h1>
         <p className="max-w-[530px] text-lg mt-3 pt-3 leading-8">
           Share your files in any format through instantly shareable links.
-          ShareFlow combines PNG, JPG, PDF, PPT, GIF and more - all in one
-          platform.
+          ShareFlow allows you to encrypt your files and documents with
+          password.
         </p>
         <div className="flex md:gap-2 my-6">
           <svg
