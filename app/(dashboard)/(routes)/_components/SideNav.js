@@ -29,8 +29,8 @@ const SideNav = () => {
   return (
     <div className="shadow-sm sidenav border-r h-full md:bg-transparent bg-white">
       <Link href="/">
-        <div className="p-5  md:block hidden">
-          <Image src="./logo.svg" width={32} height={32} />
+        <div className="px-5 py-4  md:block hidden">
+          <Image src="./logo.svg" width={40} height={40} />
         </div>
       </Link>
       <div className="flex flex-col float-left w-full ">

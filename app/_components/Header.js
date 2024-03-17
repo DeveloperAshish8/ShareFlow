@@ -11,10 +11,12 @@ const Header = () => {
   };
   return (
     <header className="bg-transparent">
-      <div className="mx-auto max-w-screen-xl px-4  lg:px-8">
+      <div className="mx-auto max-w-screen-xl px-4  lg:px-8 ">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1 md:flex md:items-center md:gap-12">
-            <Image src="./logo.svg" width={40} height={40} />
+            <Link href="/">
+              <Image src="./logo.svg" width={40} height={40} />
+            </Link>
           </div>
 
           <div className="md:flex md:items-center md:gap-12">
