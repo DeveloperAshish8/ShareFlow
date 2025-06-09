@@ -1,4 +1,5 @@
 "use client";
+const bcrypt = require("bcryptjs");
 import { ArrowDownToLine, Download, Eye } from "lucide-react";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -10,6 +11,21 @@ const SharedPage = ({ file }) => {
   const Download = (url) => {
     if (typeof window !== "undefined") {
       window.location.href = url;
+    }
+  };
+
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [error, setError] = useState("");
+
+  const handlePasswordCheck = async () => {
+    const allowed = await bcrypt.compare(password, file.password);
+    if (allowed) {
+      setIsPasswordValid(true);
+      setError("");
+      window.open(file.fileUrl); // Proceed with download
+    } else {
+      setIsPasswordValid(false);
+      setError("Incorrect password.");
     }
   };
   return (
@@ -61,13 +77,18 @@ const SharedPage = ({ file }) => {
 
             <button
               className="p-4 m-auto flex justify-center rounded-lg bg-primary text-white w-[80%] items-center disabled:bg-gray-400"
-              disabled={file.password !== password}
-              onClick={() => window?.open(file.fileUrl)}
+              disabled={file.password.length > 3 && password.length === 0}
+              onClick={handlePasswordCheck}
             >
               {" "}
               Download
               <ArrowDownToLine />
             </button>
+            {error && (
+              <span className="text-red-600 text-sm font-semibold flex justify-center items-center">
+                {error}
+              </span>
+            )}
           </div>
         </div>
       </div>

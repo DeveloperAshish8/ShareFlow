@@ -1,8 +1,10 @@
 "use client";
+const bcrypt = require("bcryptjs");
 import React, { useEffect, useState } from "react";
 import { getFirestore, updateDoc, doc, getDoc } from "firebase/firestore";
 import { app } from "@/firebaseConfig";
 import FileShare from "./_components/FileShare";
+// import bcrypt from "bcryptjs";
 
 const FilePreview = ({ params }) => {
   const db = getFirestore(app);
@@ -29,9 +31,10 @@ const FilePreview = ({ params }) => {
   const id = params?.id;
   const onPasswordSave = async (password) => {
     const docRef = doc(db, "uploads", id);
-    // console.log(password);
+    const securedPassword = await bcrypt.hash(password, 10);
+    console.log(securedPassword);
     await updateDoc(docRef, {
-      password: password || "",
+      password: securedPassword || "",
     });
   };
   return (

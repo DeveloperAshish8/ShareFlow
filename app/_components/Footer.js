@@ -19,14 +19,14 @@ const Footer = () => {
       <div className="flex justify-center items-center w-[100%] md:mx-auto mt-4 mb-6 max-w-[1200px] ">
         {" "}
         <h1 className="font-semibold text-xl">
-          Built with ❤️ by{" "}
-          <Link
+          Built with ❤️ in India
+          {/* <Link
             className="ml-2 underline text-primary "
             href="https://ashish4.vercel.app"
             target="_blank"
           >
             Ashish
-          </Link>
+          </Link> */}
         </h1>
       </div>
     </footer>
