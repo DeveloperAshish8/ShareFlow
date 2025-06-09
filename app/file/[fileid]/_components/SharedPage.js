@@ -18,6 +18,11 @@ const SharedPage = ({ file }) => {
   const [error, setError] = useState("");
 
   const handlePasswordCheck = async () => {
+    if (!file.password || file.password.length <= 3) {
+      // No password, allow download
+      window.open(file.fileUrl);
+      return;
+    }
     const allowed = await bcrypt.compare(password, file.password);
     if (allowed) {
       setIsPasswordValid(true);
